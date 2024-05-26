@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma
+    ports:
+      - "8000:8000"
+    networks:
+      - over-net
+    volumes:
+      - chromadb_data:/data
+
+  app:
+    image: watsonx_chatbot:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:
+      - chromadb
+    networks:
+      - over-net
+    volumes:
+      - app_data:/app
+
+networks:
+  over-net:
+    driver: overlay
+    attachable: true
+
+volumes:
+  chromadb_data:
+  app_data:
