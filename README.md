@@ -12,7 +12,7 @@ Este proyecto contiene la documentación necesaria para poder desarrollar los la
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/mikelagirrebeitiaiturrieta/generative_ai.git 
+git clone https://github.com/mikelagirrebeitiaiturrieta/formacion_generative_ai.git
 ```
 
 2. Crear entorno virtual e instalar las dependencias:
